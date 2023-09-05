@@ -15,7 +15,7 @@ export default class Posts extends Component {
     }
 
     getData(){
-        postService.getPost().then(result => {
+        postService.getPosts().then(result => {
             this.setState({data: result.data})
         })
     }
@@ -44,7 +44,7 @@ export default class Posts extends Component {
         return (
             <div id='posts'>
                 {this.state.data.map(post =>
-                    <div id={'post_' + post.id}>
+                    <div id={'post_' + post.id} key={post.id}>
                         <p>{post.text}</p>
                         <button onClick={() => this.setLike(post)}> {post.likesCount} </button>
                         <p>Date: {post.date}</p>
