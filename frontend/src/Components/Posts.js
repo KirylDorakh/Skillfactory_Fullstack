@@ -40,6 +40,10 @@ export default class Posts extends Component {
         this.forceUpdate()
     }
 
+    deletePost(post){
+        postService.deletePost(post.id)
+    }
+
     render(){
         return (
             <div id='posts'>
@@ -47,6 +51,7 @@ export default class Posts extends Component {
                     <div id={'post_' + post.id} key={post.id}>
                         <p>{post.text}</p>
                         <button onClick={() => this.setLike(post)}> {post.likesCount} </button>
+                        <button onClick={() => this.deletePost(post)}> Delete </button>
                         <p>Date: {post.date}</p>
                     </div>
                 )}

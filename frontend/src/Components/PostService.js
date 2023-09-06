@@ -19,12 +19,10 @@ class PostService{
         return axios.post(url, text);
     }
 
-    render() {
-        return (
-            <div>
-                
-            </div>
-        );
+    deletePost(id){
+        const url = `${API_URL}api/v1/delete_post/` + id
+        return axios.delete(url).then(response => response.data)
+
     }
 }
 

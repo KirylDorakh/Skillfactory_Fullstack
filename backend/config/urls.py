@@ -8,4 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/posts/', views.posts),
     path('api/v1/like_post/<int:post_id>/', views.like_post),
+    path('api/v1/delete_post/<int:post_id>/', views.delete_post),
 ]
