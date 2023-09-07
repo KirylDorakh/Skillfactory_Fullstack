@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
 
+
     'publicposts',
+    'staff'
 ]
 
 MIDDLEWARE = [
@@ -133,3 +135,7 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
 )
+
+# for images in staff
+MEDIA_ROOT = str(BASE_DIR / "media")
+MEDIA_URL = '/media/'
